@@ -15,6 +15,7 @@ def connect_db():
 
 @app.before_request
 def before_request():
+    print('Hello World! Before request!')
     g.db = connect_db()
 
 

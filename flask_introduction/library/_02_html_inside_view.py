@@ -18,8 +18,12 @@ def hello_world():
     html = """
         <html>
             <h1>Welcome to our Library!</h1>
+            {authors_ul}
         </html>
     """
-    authors = ["Alan Poe", "Jorge L. Borges", "Mark Twain"]
+    authors = ["Alan Poe", "Jorge L. Borges", "Mark Twain", "Paul Noname"]
     # build an <ul> with authors
-    return html
+    authorsUl = "<ul>"
+    authorsUl += "\n".join(["<li>{author}</li>".format(author=i) for i in authors])
+    authorsUl += "</ul>"
+    return html.format(authors_ul=authorsUl)
